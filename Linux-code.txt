@@ -1,0 +1,26 @@
+ctrl+l 清屏
+reset 完全清屏
+ls -ah 全列表
+
+touch+文件名，直接新建一个文件
+vi 文件名 i 开始编辑
+ESC,然后 :wq 退出并保存
+
+rm -rf .git 删除本地版本库
+git config --global --unset-all user.email 清除email
+git log 显示从最近到最远的提交日志（commit后）
+git reset --hard HEAD^ 回退到上个版本（HEAD~100）
+git reset --hard 1094asdfgasdfg 跳转版本
+git reset HEAD readme.txt 讲暂存区的修改撤销，回退再用checkout（撤销add）
+git reflog 后悔药，显示每一次命令，back to future（在仓库中的每次commit命令）
+git checkout -- readme.txt退一步，撤销修改
+git remote add origin git@github.com:...git (origin远程库的名字)
+git remote rm origin 删除关联远程仓库
+git remote -v 查看远端地址
+rm -rf .git 删除本地仓库
+git commit --amend （add commot -m, 再add，这次commit --amend可以和上一次的合并提交）
+git switch -c ...创建分支
+git branch -a 分支列表
+git branch -d ... 删除分支
+git merge ... 合并分支
+git merge --no-ff  -m "..." dev （无fast forward，有记录，正常合并dev）
