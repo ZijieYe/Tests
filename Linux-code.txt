@@ -6,21 +6,37 @@ touch+文件名，直接新建一个文件
 vi 文件名 i 开始编辑
 ESC,然后 :wq 退出并保存
 
+git ssh 
+cd ~/.ssh 检查有无ssh钥匙
+ssh-keygen 生成一对钥匙
+cat ~/.ssh/id_rsa.pub 取公钥
+
 rm -rf .git 删除本地版本库
 git config --global --unset-all user.email 清除email
 git log 显示从最近到最远的提交日志（commit后）
+git log --name-status  显示新增、修改、删除的文件清单
 git reset --hard HEAD^ 回退到上个版本（HEAD~100）
 git reset --hard 1094asdfgasdfg 跳转版本
+git reset --soft HEAD^ （撤销commit）
 git reset HEAD readme.txt 讲暂存区的修改撤销，回退再用checkout（撤销add）
 git reflog 后悔药，显示每一次命令，back to future（在仓库中的每次commit命令）
 git checkout -- readme.txt退一步，撤销修改
 git remote add origin git@github.com:...git (origin远程库的名字)
 git remote rm origin 删除关联远程仓库
-git remote -v 查看远端地址
+git remote -v 查看远端地址 
+git remote show origin  #查看远程分支和本地分支的对应关系
 rm -rf .git 删除本地仓库
 git commit --amend （add commot -m, 再add，这次commit --amend可以和上一次的合并提交）
-git switch -c ...创建分支
+git switch -c dev origin/entwurf创建分支dev，同步远程分支entwurf
 git branch -a 分支列表
 git branch -d ... 删除分支
 git merge ... 合并分支
 git merge --no-ff  -m "..." dev （无fast forward，有记录，正常合并dev）
+git fetch origin aaa 从远程origin aaa获取最新版本到本地，
+git diff master origin/master 查看与远程的不同（fetch 后）
+git pull origin aaa
+git stash 暂存手头工作（未commit 的文件）
+git stash apply 恢复stash的文件，不删除（pop恢复并删除）
+git restore --staged <File> （将暂存区added的文件恢复到未add）
+
+
